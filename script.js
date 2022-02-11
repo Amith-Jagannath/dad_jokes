@@ -1,17 +1,9 @@
-const jokeEl = document.getElementById("joke");
-const btnEl = document.getElementById("jokebtn");
-
-jokebtn.addEventListener("click", generateJoke);
-
-generateJoke();
-
-async function generateJoke() {
-  const config = {
-    headers: {
-      Accept: "application/json",
-    },
-  };
-  const res = await fetch("https://icanhazdadjoke.com", config);
-  const data = await res.json();
-  jokeEl.innerHTML = data.joke;
-}
+const insert = document.getElementById("insert");
+// console.log("hello");
+window.addEventListener("keydown", function (event) {
+  insert.innerHTML = `<div class="key"> ${
+    event.key == " " ? space : event.key
+  }<small>event.key</small></div>
+      <div class="key">${event.keyCode} <small>event.keycode</small></div>
+      <div class="key">${event.code} <small>event.code</small></div>`;
+});
